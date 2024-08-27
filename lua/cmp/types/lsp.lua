@@ -201,9 +201,8 @@ lsp.CompletionItemKind = {
   Operator = 24,
   TypeParameter = 25,
 }
-for k, v in pairs(lsp.CompletionItemKind) do
-  lsp.CompletionItemKind[v] = k
-end
+for _, k in ipairs(vim.tbl_keys(lsp.CompletionItemKind)) do
+  local v = lsp.CompletionItemKind[k]
 
 ---@class lsp.internal.CompletionItemDefaults
 ---@field public commitCharacters? string[]
